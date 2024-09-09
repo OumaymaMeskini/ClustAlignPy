@@ -78,6 +78,6 @@ def show_alignement(aligned_seq1, aligned_seq2, score):
     print("Sequence 2 : ", aligned_seq2)
     print("Alignement score : ", score)
 if __name__== "__main__":
-    test = read_fasta("./test2.fasta")
+    test = read_fasta("./test3.fasta")
     a_seq1, a_seq2, score = two_seq_align(test['seq_1'], test['seq_2'])
     show_alignement(a_seq1, a_seq2, score)
