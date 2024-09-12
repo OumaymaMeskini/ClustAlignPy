@@ -16,7 +16,13 @@ $ conda env create -f clustalignpy.yml
 ```
 
 ## Usage
-Don't forget to activate the conda enviroment.
+Clone the project
+```bash
+git clone https://github.com/OumaymaMeskini/ClustAlignPy.git
+cd ClustAlignPy
+```
+
+Activate the conda enviroment.
 ```bash
 conda activate clust_align_py_env
 ```
