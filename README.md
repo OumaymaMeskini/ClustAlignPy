@@ -39,11 +39,11 @@ The program will:
 ## Example Output
 The output consists of the aligned sequences printed in a formatted manner in the console, showing gaps (-) and the number of amino acids aligned in each segment.
 
-Sequence_1: M--KTADGV...    7
+Sequence_1:      M--KTADGV...        7
 
-Sequence_2: MK-KTADGV...    8
+Sequence_2:      MK-KTADGV...        8
 
-Sequence_3: MK-LTAD--...    6
+Sequence_3:      MK-LTAD--...        6
 
 
 ## Limitations
