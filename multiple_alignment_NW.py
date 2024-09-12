@@ -17,6 +17,7 @@ import numpy as np
 import pandas as pd
 import sys
 import os
+import timeit
 
 BLOSUM_62 = pd.read_csv("blosum62.csv")
 GAP_PENALTY = -8
@@ -439,7 +440,7 @@ def count_non_dash_chars(sequence):
     """
     return sum(1 for char in sequence if char != '-')
 
-def print_aligned_sequences(sequence_names, aligned_sequences, line_length=50):
+def print_aligned_sequences(sequence_names, aligned_sequences, line_length=70):
     """
     Prints aligned sequences in a formated manner
 
@@ -454,16 +455,20 @@ def print_aligned_sequences(sequence_names, aligned_sequences, line_length=50):
     # Verifying that all sequences have a name and vice versa
     if len(sequence_names) != len(aligned_sequences):
         raise ValueError("Les listes de noms de séquences et de séquences alignées doivent avoir la même longueur")
-    
+    print("\n")
+    #num_chars_list = [0]*(len(aligned_sequences))
     for i in range(0, len(aligned_sequences[0]), line_length):
+            #k = 0
             for name, seq in zip(sequence_names, aligned_sequences):
                 # Sequence name
                 print(f"{name:<30}", end="")
                 # Sequence
                 print(seq[i:i+line_length], end=" ")
                 # The number of amino acids in the line
-                num_chars = count_non_dash_chars(seq[i:i+line_length])
-                print(f"{num_chars}")  
+                num_chars = count_non_dash_chars(seq[i:i+line_length]) #+ num_chars_list[k]
+                #num_chars_list[k] = num_chars
+                #k += 1
+                print(f"{num_chars}") 
             print("\n")
 
 def clust_align(fasta_file):
@@ -517,7 +522,7 @@ def clust_align(fasta_file):
                 aligned_sequences_name.append(cluster)
         
         # Show the alignement
-        print_aligned_sequences(aligned_sequences_name, base_cluster, 50)
+        print_aligned_sequences(aligned_sequences_name, base_cluster)
 
 
 if __name__== "__main__":
@@ -529,4 +534,5 @@ if __name__== "__main__":
     if not os.path.exists(file_path):
         sys.exit(f"ERROR: The file '{file_path}' does not exist.")
 
-    clust_align(file_path)
+    execution_time = timeit.timeit("clust_align(file_path)", globals=globals(), number=1)
+    print(f"Execution time: {execution_time:.2f} seconds")
