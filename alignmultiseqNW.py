@@ -91,13 +91,15 @@ def get_aa(cluster, pos) :
 
 def calc_multi_score(aa_cluster1, aa_cluster2):
     score = 0
+    counter = 0
     for aa1 in aa_cluster1 : 
         for aa2 in aa_cluster2 :
             if aa1 == "-" or aa2 == "-":
                 score += GAP_PENALTY
             else :
                 score += get_score(aa1, aa2)
-    return score
+            counter += 1
+    return score/counter
 # Cluster doit etre sous forme de liste qui contient 1 ou plusieurs séquences.
 
 
