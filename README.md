@@ -19,7 +19,7 @@ $ conda env create -f clustalignpy.yml
 Don't forget to activate the conda enviroment.
 ```bash
 conda activate clust_align_py_env
-
+```
 You can run the program by passing a FASTA file containing the sequences you wish to align.
 
 ```bash
