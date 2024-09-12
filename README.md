@@ -4,7 +4,7 @@
 This program performs multiple sequence alignment (MSA) for proteins by combining dynamic programming (Needleman-Wunsch algorithm) with the UPGMA clustering method. The sequences are aligned progressively according to the order defined by a phylogenetic tree.
 
 ## Installation
-To run the program, you need Python 3.x and the following dependencies:
+To run the program, you need Python 3.12.4 and the following dependencies:
 - `numpy`
 - `pandas`
 - `biopython` (for handling FASTA files)
