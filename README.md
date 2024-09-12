@@ -19,7 +19,6 @@ $ conda env create -f clustalignpy.yml
 Don't forget to activate the conda enviroment.
 ```bash
 conda activate clust_align_py_env
-```
 
 You can run the program by passing a FASTA file containing the sequences you wish to align.
 
@@ -40,11 +39,11 @@ The program will:
 ## Example Output
 The output consists of the aligned sequences printed in a formatted manner in the console, showing gaps (-) and the number of amino acids aligned in each segment.
 
-| Sequence   | Alignment     | Number of Amino Acids |
-|------------|---------------|-----------------------|
-| Sequence_1 | M--KTADGV...  | 7                     |
-| Sequence_2 | MK-KTADGV...  | 8                     |
-| Sequence_3 | MK-LTAD--...  | 6                     |
+Sequence_1: M--KTADGV...    7
+
+Sequence_2: MK-KTADGV...    8
+
+Sequence_3: MK-LTAD--...    6
 
 
 ## Limitations
