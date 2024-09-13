@@ -19,7 +19,7 @@ import sys
 import os
 import timeit
 
-BLOSUM_62 = pd.read_csv("blosum62.csv")
+BLOSUM_62 = pd.read_csv("./data/blosum62.csv")
 GAP_PENALTY = -8
 
 
